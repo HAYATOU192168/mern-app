@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Blog = require("../model/Blog");
+const Blog = require("../model/blog.js");
 
 
 //fetch list of blogs//
