@@ -12,9 +12,9 @@ export default function Home() {
   const navigate = useNavigate();
 
   async function handleDeleteBlog(getCurrentId) {
-    const response = await axios.delete(
-      `http://localhost:5000/api/blogs/delete/${getCurrentId}`,
-    );
+ const response = await axios.delete(
+   `https://mern-app-server-2yyh.onrender.com/api/blogs/delete/${getCurrentId}`,
+ );
     const result = response.data;
     if (result?.message) {
       fetchListOfBlogs();
@@ -24,7 +24,9 @@ export default function Home() {
 
   async function fetchListOfBlogs() {
     setPending(true);
-    const response = await axios.get("http://localhost:5000/api/blogs");
+   const response = await axios.get(
+     "https://mern-app-server-2yyh.onrender.com/api/blogs",
+   );
     const result = response.data;
 
     if (result && result.blogList && result.blogList.length) {
